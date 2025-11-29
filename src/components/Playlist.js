@@ -1,20 +1,16 @@
 import React, { useState } from 'react';
-import Track from './Track.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMinus } from '@fortawesome/free-solid-svg-icons';
 
 function Playlist(props){
-    const playlistTracks = [{id:1,name:"tum se hi",artist:"mohit chauhan",album:"jab we met"},
-        {id:2,name:"suraj hua madham",artist:"sonu nigam",album:"k3g"},
-        {id:3,name:"kun faya",artist:"mohit chauhan",album:"rockstar"}
-      ];
-    const[input,setInput] = useState('')
-    function handleInputChange(e){
-        setInput(e.target.value)
+    function handlremoveTrack(track){
+        props.removeTrack(track)
     }
     return(
         <div>
-            <input type="text" value={input} placeholder="Enter your playlist name" onChange={handleInputChange}/>
-            {playlistTracks.map((song) => <p key={song.id}> {song.name} | {song.artist} | {song.album} </p> )}
-            <button>Save to Spotify</button>
+            <input type="text" value={props.value} placeholder="Enter your playlist name" onChange={props.inputChange}/>
+            {props.playlistTracks.map((song) => <p key={song.id}> {song.name} | {song.artist} | {song.album} <FontAwesomeIcon icon={faMinus} onClick={() => handlremoveTrack(song)}/></p> )}
+            <button onClick={props.savePlaylist}>Save to Spotify</button>
         </div>
 
     )

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../styles/SearchBar.module.css';
 
-function SearchBar(){
+function SearchBar({onSearch}){
     const[value1,setValue] = useState('');
 
     function handleInputChange(e){
@@ -9,7 +9,7 @@ function SearchBar(){
     }
 
     function handleSearchButton(){
-        alert(value1)
+        onSearch(value1)
     }
     return(
         <div className={styles.input}>
