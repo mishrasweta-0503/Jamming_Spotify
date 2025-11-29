@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '../styles/SearchResults.module.css';
 import Track from './Track.js';
 
 function SearchResults(props){
