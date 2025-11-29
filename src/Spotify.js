@@ -1,5 +1,5 @@
 const Spotify = {
-    search(term){
+    search(){
         const mockResults = [{id:1,name:"Shape of you",artist:"ed sheeren",album:"divide",uri:""},
             {id:2,name:"cruel summer",artist:"taylor swift",album:"reputation",uri:""},
             {id:3,name:"thank u next",artist:"ariana grande",album:"sweetener",uri:""},
